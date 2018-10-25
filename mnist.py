@@ -8,12 +8,12 @@ import matplotlib.image as mpimg
 
 from numpy import array
 
-img = Image.open('2.png')
-arr= array(img)
-print(arr.shape)
-arr = array(img).reshape(28*28, 3)[:, 0:1].reshape(1, 784)
+img = Image.open('2.png') #같은 파일에 있는 사진 불러오기
+arr= array(img) #numpy에 있는 array를 이용해서 이미지를 배열로
+print(arr.shape) #모양이 사진마다 다르게 나오길래 shape를 출력
+arr = array(img).reshape(28*28, 3)[:, 0:1].reshape(1, 784) #print했더니 28,28,3나와서 1,784로 바꾸기
 
-mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
+mnist = input_data.read_data_sets("MNIST_data/", one_hot=True) #data를 받아와서 데이터를 0과 1로 분리
 
 
 # images = mnist.test.images
